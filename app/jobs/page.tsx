@@ -4,9 +4,10 @@ import { Search, MapPin, DollarSign, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import { Job, defaultJobs } from '@/lib/data';
 
-export default function AllJobs() {
+function AllJobsContent() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [locationFilter, setLocationFilter] = useState('');
@@ -149,5 +150,13 @@ export default function AllJobs() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function AllJobs() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <AllJobsContent />
+    </Suspense>
   );
 }
