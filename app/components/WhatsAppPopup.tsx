@@ -32,7 +32,10 @@ export default function WhatsAppPopup() {
     // Check if user has dismissed popup in this session
     const dismissed = sessionStorage.getItem('whatsapp_popup_dismissed');
     
-    // Set timeout to show popup after 1 minute
+    // Show popup after a random delay (choose from 1m, 10m, 30m, 1h)
+    const delays = [60_000, 600_000, 1_800_000, 3_600_000];
+    const chosenDelay = delays[Math.floor(Math.random() * delays.length)];
+
     const timer = setTimeout(() => {
       if (!dismissed) {
         const randomIndex = Math.floor(Math.random() * WHATSAPP_CHANNELS.length);
@@ -42,7 +45,7 @@ export default function WhatsAppPopup() {
         });
         setShowPopup(true);
       }
-    }, 60000); // 1 minute
+    }, chosenDelay);
 
     return () => clearTimeout(timer);
   }, []);
