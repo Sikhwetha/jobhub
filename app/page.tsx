@@ -68,7 +68,7 @@ export default function Home() {
                 <a href="#learnership" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Learnership</a>
               </div>
               <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-medium">
-                Sign In
+                Submit Your Cv
               </button>
             </div>
           </div>
