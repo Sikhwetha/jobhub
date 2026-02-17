@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { Job, defaultJobs } from '@/lib/data';
+import SidebarFilters from '../components/SidebarFilters';
 
 function AllJobsContent() {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -61,49 +62,17 @@ function AllJobsContent() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-4 gap-8">
-          {/* Sidebar Filters */}
-          <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-slate-900 rounded-lg border border-gray-200 dark:border-slate-800 p-6 sticky top-4">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6">Filters</h3>
-              
-              <div className="space-y-6">
-                {/* Search */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Job Title or Company
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 dark:bg-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  />
-                </div>
-
-                {/* Location Filter */}
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Location
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="City or Remote"
-                    value={locationFilter}
-                    onChange={(e) => setLocationFilter(e.target.value)}
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-slate-700 dark:bg-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-600"
-                  />
-                </div>
-
-                {/* Results Count */}
-                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Showing <span className="font-bold text-blue-600 dark:text-blue-400">{filteredJobs.length}</span> jobs
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <SidebarFilters
+            title="Filters"
+            searchLabel="Job Title or Company"
+            locationLabel="Location"
+            searchValue={searchTerm}
+            onSearchChange={setSearchTerm}
+            locationValue={locationFilter}
+            onLocationChange={setLocationFilter}
+            count={filteredJobs.length}
+            accent="blue"
+          />
 
           {/* Jobs List */}
           <div className="lg:col-span-3 space-y-4">
