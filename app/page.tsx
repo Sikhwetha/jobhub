@@ -145,7 +145,7 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Featured Jobs</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
-              {jobs.slice(0, 3).map((job) => (
+              {[...jobs].reverse().slice(0, 3).map((job) => (
                 <Link key={job.id} href={`/jobs/${job.id}`}>
                   <div className="bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 p-6 hover:shadow-lg transition cursor-pointer h-full">
                     <div className="flex items-start justify-between mb-4">
@@ -191,7 +191,7 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Internship Programs</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
-              {internships.slice(0, 3).map((internship) => (
+              {[...internships].reverse().slice(0, 3).map((internship) => (
                 <Link key={internship.id} href={`/internships/${internship.id}`}>
                   <div className="bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 p-6 hover:shadow-lg transition cursor-pointer h-full">
                     <div className="space-y-4">
@@ -239,7 +239,7 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">Learnership Programs</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
-              {learnerships.slice(0, 3).map((learnership) => (
+              {[...learnerships].reverse().slice(0, 3).map((learnership) => (
                 <Link key={learnership.id} href={`/learnership/${learnership.id}`}>
                   <div className="bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 p-6 hover:shadow-lg transition cursor-pointer h-full">
                     <div className="space-y-4">

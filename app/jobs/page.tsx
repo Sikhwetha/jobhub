@@ -43,7 +43,7 @@ function AllJobsContent() {
                          job.company.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesLocation = job.location.toLowerCase().includes(locationFilter.toLowerCase()) || locationFilter === '';
     return matchesSearch && matchesLocation;
-  });
+  }).reverse();
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950">

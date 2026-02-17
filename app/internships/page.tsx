@@ -29,7 +29,7 @@ export default function AllInternships() {
                          internship.company.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesLocation = internship.location.toLowerCase().includes(locationFilter.toLowerCase()) || locationFilter === '';
     return matchesSearch && matchesLocation;
-  });
+  }).reverse();
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-950">
