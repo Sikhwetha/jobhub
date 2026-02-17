@@ -30,6 +30,26 @@ export default function CVSubmit() {
 
   const handleSubmit = () => {
     if (formData.fullName && formData.email && formData.phone && formData.position && file) {
+      // Create WhatsApp message
+      const message = `Hello! I'm submitting my CV for the JobHub platform.
+
+Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Position Interested In: ${formData.position}
+CV File: ${file.name}
+
+Looking forward to connecting!`;
+
+      // Encode message for WhatsApp
+      const encodedMessage = encodeURIComponent(message);
+      
+      // Open WhatsApp channel with message
+      window.open(
+        `https://whatsapp.com/channel/0029Vb3nuYN6LwHk1EJ0du1k?text=${encodedMessage}`,
+        '_blank'
+      );
+
       setIsSubmitted(true);
       // Reset form
       setFormData({
