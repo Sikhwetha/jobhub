@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   description: "Discover thousands of job positions, internships, and learnership programs from top companies. Land your next opportunity with JobHub - the premier job portal for career growth.",
   keywords: "jobs, internships, learnership, employment, career, job portal, recruitment",
   authors: [{ name: "JobHub Team" }],
+  verification: {
+    google: "xIWFA70-L5tCsq62WRZ_KwWzet1hdmMROTlhdrljLQc",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
