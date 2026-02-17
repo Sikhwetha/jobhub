@@ -63,13 +63,14 @@ export default function Home() {
                 <span className="text-2xl font-bold text-gray-900 dark:text-white">JobHub</span>
               </div>
               <div className="hidden md:flex gap-8">
-                <a href="#jobs" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Jobs</a>
-                <a href="#internships" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Internships</a>
-                <a href="#learnership" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Learnership</a>
+                <Link href="/jobs" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Jobs</Link>
+                <Link href="/internships" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Internships</Link>
+                <Link href="/learnership" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Learnership</Link>
+                <Link href="/admin" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium">Admin</Link>
               </div>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-medium">
+              <Link href="/cv-submit" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-medium inline-block">
                 Submit Your Cv
-              </button>
+              </Link>
             </div>
           </div>
         </nav>
